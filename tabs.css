@@ -1,18 +1,10 @@
-body {
-  background-color: #084C61;
-  font-family: 'Noto Sans KR', sans-serif;
-  color: white;
+.home,h1,h2,h3 {
+    background-color: #084C61;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
 }
- .hidden {
-  display: none;
-  text-align: center;
-  align-items: center;
-}
-#caption {
-  color: white;
-  text-align: center;
-}
-button {
+
+.button {
   color: #084C61;
   background-color: #5BC0BE;
   width: 100%;
@@ -20,18 +12,24 @@ button {
   margin: 4px 2px;
   padding: 5px 15px;
 }
+a:hover {
+  text-decoration: none;
+}
+
+.player {
+  padding: 10px;
+}
+
 .main {
   text-align: center;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-#onclick {
-  width: 33%;
-}
+
 li {
   display: inline;
-   padding: 10px 16px;
+  padding: 1px 5px;
 }
 /******GOT7 COLOR CODING******/
 #jb {
