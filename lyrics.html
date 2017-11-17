@@ -2,20 +2,18 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <title>Lyric Translastions - Button Toggle</title>
+  <title>Lyric Translastions - Buttons</title>
   <link rel="stylesheet" href="style.css" type="text/css">
   <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
   </head>
-  <style>
-  @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
-  </style>
-  <body>
+  <body class="home">
     <div class="container">
-      <h2>Teenager</h2>
-      <h2>7 for 7(2017)</h2>
-      <h3>By:GOT7</h3>
-
-      <iframe width="100%" height="166" scrolling="no" frameborder="no"
+      <ul class="breadcrumbs">
+        <li><a href="#">Got7</a></li>
+        <li><a href="#">7 for 7(2017)</a></li>
+        <li>Teenager</li>
+      </ul>
+      <iframe class="player" width="100%" height="166" scrolling="no" frameborder="no"
       src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/346194844&amp;color=%238cbfc2&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true">
       </iframe>
       <div id="caption">
@@ -27,7 +25,6 @@
         <font id="bb"> BAMBAM</font>
         <font id="yg">YUGYEOM</font>
       </div>
-      <div id="main" class="col-md-12">
         <div class="col-md-4 language">
           <button>Korean</button>
           <p class="hidden" lang="ko">
@@ -210,9 +207,9 @@
               Translation by  <a href="https://twitter.com/igot7_MarKP">@igot7_MarKP</a>
             </p>
         </div>
-      </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"> </script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
 </html>
