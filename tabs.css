@@ -1,30 +1,96 @@
-.home,h1,h2,h3 {
-    background-color: #084C61;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: white;
+body,.home {
+  background-color: #525174;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: white;
+}
+
+/*************BREADCRUMBS***************/
+ul.breadcrumbs {
+  text-align: left;
+  list-style: none;
+  padding: 5px;
+  margin-left: auto;
+}
+ul.breadcrumbs li {
+  display: inline;
+  font-size: 20px;
+}
+ul.breadcrumbs li+li::before{
+  color: #E07A5F;
+  padding: 10px;
+  content: ">\00a0";
+}
+ul.breadcrumbs li a{
+  color: #D5D1D6;
+  text-decoration: none;
+}
+ul.breadcrumbs li a:hover{
+  color: #E07A5F;
+  text-decoration: none;
+}
+ul.breadcrumbs li {
+  color: #FFF;
+}
+/***********************************/
+/*************DIV TABLE**************/
+.div-table {
+
+  display: table;
+  width: 100%;
+  border-spacing: 5px; /* cellspacing:poor IE support for  this */
+}
+.div-table-row {
+
+  display: table-row;
+  width: 100%;
+  clear: both;
+}
+.div-table-col {
+  float: left;
+  /* fix for  buggy browsers */
+  display: table-column;
+  margin: 2px;
+  width: 30%;
+}
+/*********************************/
+.container {
+  background-color: #3D405B;
+  border: 25px solid #3D405B;
+  height: 100%;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lyrics {
+  background-color: #EDEFF9;
+  border: 25px solid #EDEFF9;
+  height: 100%;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin: 10px;
 }
 
 .button {
+  text-align: center;
   color: #084C61;
-  background-color: #5BC0BE;
-  width: 100%;
-  border: 2px solid #5BC0BE;
-  margin: 4px 2px;
-  padding: 5px 15px;
+  background-color: #D5DCF9;
+  height: 100%;
+  border: 5px solid #D5DCF9;
+  border-radius: 39px;
 }
 a:hover {
-  text-decoration: none;
+  color: white;
 }
 
 .player {
   padding: 10px;
 }
 
-.main {
-  text-align: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+#caption {
+  margin: 2%;
 }
 
 li {
