@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <title>title</title>
   <style>
+    body {
+      background: #efefef;
+    }
+
     /*-------------- AUDIO PLAYER --------------*/
 
     .audio-player {
@@ -52,7 +56,7 @@
     .jp-audio,
     .jp-audio-stream,
     .jp-video {
-      background: rgba(232, 142, 120, 1);
+      background: rgba(0, 0, 0, 0.8);
       padding: 15px;
       position: relative;
     }
@@ -61,10 +65,6 @@
 
     .jp-playlist {
       display: none;
-    }
-
-    .jp-controls button {
-      background: #CE755F;
     }
 
     .jp-interface .jp-controls button,
@@ -92,7 +92,6 @@
       font-size: 20px;
       padding: 0 5px;
     }
-
 
     .jp-interface .jp-controls .jp-play i,
     .jp-interface .jp-controls .jp-previous i,
@@ -372,113 +371,77 @@
       }
     }
   </style>
-</head>
-
-<body>
-  <!-- ============= FLEXBOX AUDIO PLAYER ============== -->
-  <div class="audio-player">
-
-    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-    <!-- Audio Player -->
-
-    <!-- Visual Container -->
-    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
-      <div class="jp-type-playlist">
-        <!-- Flexbox -->
-        <div class="jp-gui jp-interface flex-wrap">
-
-          <!-- Play / Pause... Controls -->
-          <div class="jp-controls flex-item">
-            <button class="jp-previous" role="button" tabindex="0"><i class="fa fa-step-backward"></i></button>
-            <button class="jp-play" role="button" tabindex="0"><i class="fa fa-play "></i></button>
-            <button class="jp-next " role="button " tabindex="0 "><i class="fa fa-step-forward "></i></button>
-          </div>
-          <!-- End Flex Item -->
-          <!-- Progress bar -->
-          <div class="jp-progress-container flex-item ">
-            <!-- Progress Time -->
-            <div class="jp-time-holder ">
-              <span class="jp-current-time " role="timer " aria-label="time ">&nbsp;</span>
-              <span class="jp-duration " role="timer " aria-label="duration ">&nbsp;</span>
-            </div>
-            <!-- End Time holder -->
-
-            <!-- Progress bar -->
-            <div class="jp-progress ">
-              <div class="jp-seek-bar ">
-                <div class="jp-play-bar ">
-                  <div class="bullet ">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Progress bar -->
-
-          </div>
-          <!-- End Flex Item -->
-          <!-- Album & Artist Info -->
-          <div class="jp-now-playing flex-item ">
-            <div class="jp-track-name "></div>
-            <div class="jp-artist-name "></div>
-          </div>
-          <!-- End Flex Item -->
-
-          <!-- Loop / Shuffle / Playlist Toggles -->
-          <div class="jp-toggles flex-item ">
-            <!-- Playlist Toggle -->
-            <button id="playlist-toggle " class="jp-show-playlist " role="button " tabindex="0 "><i class="fa fa-music "></i></button>
-            <!-- Shuffle Toggle -->
-            <button class="jp-shuffle " role="button " tabindex="0 ">
-                <i class="fa fa-random "></i>
-                <!-- Repeat Toggle -->
-                 <button class="jp-repeat " role="button " tabindex="0 "><i class="fa fa-exchange "></i></button>
-            </button>
-
-          </div>
-          <!-- End Flex Item -->
-          <!-- Volume controls -->
-          <div class="jp-volume-controls flex-item ">
-            <button class="jp-mute " role="button " tabindex="0 "><i class="fa fa-volume-up "></i></button>
-            <!-- Volume Bar -->
-            <div class="jp-volume-bar ">
-              <div class="jp-volume-bar-value ">
-                <div class="bullet ">
-                </div>
-              </div>
-            </div>
-            <!-- End Volume Bar -->
-          </div>
-          <!-- End Flex Item -->
-        </div>
-        <!-- End Flexbox -->
-        <!-- Playlist -->
-        <div id="playlist-wrap " class="jp-playlist ">
-          <ul>
-            <li>&nbsp;</li>
-          </ul>
-        </div>
-        <!-- End Playlist -->
-        <!-- No Flash / No HTML5 Warning -->
-        <div class="jp-no-solution ">
-          <span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/ " target="_blank ">Flash plugin</a>.
-        </div>
-      </div>
-      <!-- Player Type Playlist -->
-    </div>
-    <!-- End Contaner -->
-
-  </div>
-  <!-- End Fixed Audio Player -->
   <script>
     $(document).ready(function() {
+
       var myPlaylist = new jPlayerPlaylist({
         jPlayer: "#jquery_jplayer_1",
         cssSelectorAncestor: "#jp_container_1"
       }, [{
-        title: "Teenager",
-        artist: "GOT7",
-        mp3: "teenager-got7.mp3",
+        title: "Cro Magnon Man",
+        artist: "Mushroom Records",
+        mp3: "http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
         oga: "http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
+      }, {
+        title: "Your Face",
+        artist: "Ministry",
+        mp3: "http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
+      }, {
+        title: "Cyber Sonnet",
+        artist: "You Am I",
+        mp3: "http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
+      }, {
+        title: "Tempered Song",
+        artist: "Shelter",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
+      }, {
+        title: "Hidden",
+        artist: "Bad Religion",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
+      }, {
+        title: "Lentement",
+        artist: "Apollo 440",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg"
+      }, {
+        title: "Lismore",
+        artist: "Bloodhound Gang",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
+      }, {
+        title: "The Separation",
+        artist: "Friendly Fires ",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg"
+      }, {
+        title: "Beside Me",
+        artist: "Friendly Fires ",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg"
+      }, {
+        title: "Bubble",
+        artist: "Skunkhour",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+      }, {
+        title: "Stirring of a fool",
+        artist: "The Meanies",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
+      }, {
+        title: "Partir",
+        artist: "The Living End",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
+      }, {
+        title: "Thin Ice",
+        artist: "Screaming Trees",
+        mp3: "http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
+        oga: "http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg"
       }], {
         swfPath: "../../dist/jplayer",
         supplied: "oga, mp3",
@@ -582,6 +545,103 @@
 
     }); // end document ready
   </script>
+</head>
+
+<body>
+  <!-- ============= FLEXBOX AUDIO PLAYER ============== -->
+  <div class="audio-player">
+
+    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+    <!-- Audio Player -->
+
+    <!-- Visual Container -->
+    <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+      <div class="jp-type-playlist">
+        <!-- Flexbox -->
+        <div class="jp-gui jp-interface flex-wrap">
+
+          <!-- Play / Pause... Controls -->
+          <div class="jp-controls flex-item">
+            <button class="jp-previous" role="button" tabindex="0"><i class="fa fa-step-backward"></i></button>
+            <button class="jp-play" role="button" tabindex="0"><i class="fa fa-play"></i></button>
+            <button class="jp-next" role="button" tabindex="0"><i class="fa fa-step-forward"></i></button>
+          </div>
+          <!-- End Flex Item -->
+          <!-- Progress bar -->
+          <div class="jp-progress-container flex-item">
+            <!-- Progress Time -->
+            <div class="jp-time-holder">
+              <span class="jp-current-time" role="timer" aria-label="time">&nbsp;</span>
+              <span class="jp-duration" role="timer" aria-label="duration">&nbsp;</span>
+            </div>
+            <!-- End Time holder -->
+
+            <!-- Progress bar -->
+            <div class="jp-progress">
+              <div class="jp-seek-bar">
+                <div class="jp-play-bar">
+                  <div class="bullet">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Progress bar -->
+
+          </div>
+          <!-- End Flex Item -->
+          <!-- Album & Artist Info -->
+          <div class="jp-now-playing flex-item">
+            <div class="jp-track-name"></div>
+            <div class="jp-artist-name"></div>
+          </div>
+          <!-- End Flex Item -->
+
+          <!-- Loop / Shuffle / Playlist Toggles -->
+          <div class="jp-toggles flex-item">
+            <!-- Playlist Toggle -->
+            <button id="playlist-toggle" class="jp-show-playlist" role="button" tabindex="0"><i class="fa fa-music"></i></button>
+            <!-- Shuffle Toggle -->
+            <button class="jp-shuffle" role="button" tabindex="0">
+                <i class="fa fa-random"></i>
+                <!-- Repeat Toggle -->
+                 <button class="jp-repeat" role="button" tabindex="0"><i class="fa fa-exchange"></i></button>
+            </button>
+
+          </div>
+          <!-- End Flex Item -->
+          <!-- Volume controls -->
+          <div class="jp-volume-controls flex-item">
+            <button class="jp-mute" role="button" tabindex="0"><i class="fa fa-volume-up"></i></button>
+            <!-- Volume Bar -->
+            <div class="jp-volume-bar">
+              <div class="jp-volume-bar-value">
+                <div class="bullet">
+                </div>
+              </div>
+            </div>
+            <!-- End Volume Bar -->
+          </div>
+          <!-- End Flex Item -->
+        </div>
+        <!-- End Flexbox -->
+        <!-- Playlist -->
+        <div id="playlist-wrap" class="jp-playlist">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+        <!-- End Playlist -->
+        <!-- No Flash / No HTML5 Warning -->
+        <div class="jp-no-solution">
+          <span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+      </div>
+      <!-- Player Type Playlist -->
+    </div>
+    <!-- End Contaner -->
+
+  </div>
+  <!-- End Fixed Audio Player -->
 </body>
 
 </html>
